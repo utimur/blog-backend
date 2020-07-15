@@ -2,11 +2,13 @@ const express = require('express')
 const mongoose = require('mongoose')
 const config = require('config')
 const authRouter = require('./routes/auth.routes')
+const postsRouter = require('./routes/posts.routes')
 const app = express()
 const PORT = 8080
 
 app.use(express.json())
 app.use('/api/auth', authRouter)
+app.use('/api/posts', postsRouter)
 
 const start = async () => {
     try {
